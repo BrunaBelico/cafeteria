@@ -1,0 +1,606 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* 
+Fontes do google
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'PT Serif', serif; 
+font-family: 'Playfair Display SC', serif;
+*/
+
+
+/*
+Remover as margens internas e externas de todos os elementos (tags) html.
+Vamos usar o comando margin(externa) com valor 0 e o comando padding(interna)com o valor 0.
+Utilizaremos o comando box-sizing com o valor border-box.Isso permite que as margens internas aplicadas aos 
+elementos html não interfiram no tamanho da caixa em que este elemento está.
+*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.abrirmenu{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size: 40pt;
+    display: none;
+
+}
+.fecharmenu{
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    padding: 5px;
+    border-radius: 50%;
+    display: none;
+}
+
+header{
+    /* Vamos aumentar a altura do header para 500px */
+    height: 500px;
+    /* Usamos o comando background-image para adicionar uma imagem de fundo ao header
+    Utilizamos o comando ../ para voltar um nível anterior e assim conseguir acessar a pasta img que está fora da pasta css.
+    */
+     background-image:url("../img/fundo-cafeteria-home.jpg");
+     /* Ajustar o tamanho da foto para 100% de largura */
+     background-size: 100%;
+
+     /* 
+     Para realizar o deslocamento da imagem de fundo utilizaremos o comando background-position, 
+     assim eu posso deslocar para cima ou para baixo no eixo y e para a direita ou para esquerda no eixo x.
+     */
+     background-position: 0 -80px ;
+}
+
+#cabecalho{
+    /* 
+    Aplicar uma cor de fundo preto com um efeito de transparência.O comando será background-color com o valor rgba,
+    onde "a" do comando rgb é o efeito de transparência que varia entre 0 e 1, onde 0 "zero" é totalmente transparente e 
+    1 é totalmente visível.
+    */
+    background-color: rgba(0,0,0,0.4);
+    height: 500px;
+    color:#fff;
+
+}
+
+#superior{
+    /* 
+    O comando display permite dispor os elementos de algumas maneiras, uma delas é flex(de flexivel). Isso permite que o conteudo deste 
+    elemento fique flexivel.
+    */
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex; 
+    /* 
+    Para este exemplo foi aplicado uma estrutura flexivel em linha. Portanto o comando flex-direction recebeu o valor row(linha).
+    */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /* 
+    O comando flex-wrap reaiza uma quebra de linha.
+    */
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* border: 3px solid red; borda da caixa dos elementos*/
+} 
+
+#superior h1{
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+    /* border: 3px solid green; */
+    text-align: center;  /*alinhar o titulo no centro*/
+    padding-top: 25px; /*baixar o titulo em pixels*/
+    font-family: Georgia, 'Times New Roman', Times, serif;  /*mudar a fonte do titulo*/
+    font-size: 20pt;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#superior nav{
+    -webkit-box-flex:2;
+        -ms-flex:2;
+            flex:2;
+    /* border: 3px solid blue; */
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* 
+Vamos retirar o marcador da lista ul. Esta lista está na parte superior da página, dentro do id superior. O caminho que iremos fazer será:
+#superior nav ul.
+*/
+#superior nav ul{
+    /* Usaremos o comando list-style como none(nenhum) para retirar o marcador*/
+ list-style: none;
+}
+/* 
+Para dispor(display) os itens do menu em linha, utilizaremos o comando display com o valor inline-block
+*/
+#superior nav ul li{
+    display:inline-block;
+    padding:0px 10px;
+    /* Transition é para que o efeito de cor vá surgindo no tempo em que colocarmos */
+    -webkit-transition: ease 1.5s;
+    -o-transition: ease 1.5s;
+    transition: ease 1.5s;
+}
+/* Foi aplicado ao item li um atributo hover, aplicamos um efeito de cor de fundo, assim, mudo a cor de fundo 
+do elemento quanto passo o mouse em cima do link. */
+#superior nav ul li:hover{
+    /* background-color: blueviolet; */
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4); /*É usado para dar o efeito de aumentar a letra quando passar o mouse*/
+}
+
+#whatsapp{
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+    /* border: 3px solid purple; */
+    text-align: center;
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
+#whatsapp a{
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    text-decoration: none;
+
+
+}
+
+#superior nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    /* O comando text-transform muda o formato da letra o tornando maiúsculo, minúsculo ou a primeira letra da palavra maiuscula
+    Tudo maiúsculo -> text-transfom: uppercase
+    Tudo minúsculo -> text-transform: lowercase
+    Primeira letra maiuscula -> text-transform: capitalize
+    */
+    text-transform: uppercase;
+}
+
+
+
+#cabecalho h2{
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 30pt;
+    /* 
+    Vamos aplicar um espaçamento entre as letras. O comando é letter-spacing, você pode aplicar valores positivos ou negativos.
+    Sendo, positivo as letras se espalham e negativo as letras se juntam.
+    */
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    padding-bottom: 50px;
+}
+
+#cabecalho p{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* ------------------Estilos do footer-------------- */
+
+footer{
+    background-color: #785631;
+    /* Vamos deixar o conteudo do footer flexivel com o comando display(dispor, exibir) flex 
+    E aplicar a direção com o comando row (flex-direction com o valor row)
+    */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 30px;
+    /* height: 250px; */
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+footer #endereco{
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14pt;
+
+}
+
+footer #redes{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
+footer #redes nav{
+    text-align: right;
+}
+
+footer #redes nav ul{
+    /* Para retirar o marcador (bolinhas), temos o valor list-style com o valor none*/
+list-style: none;
+}
+
+/* para dispor um ao lado do outro os elementos links das redes, usaremos o comando display com o valor inline-block */
+footer #redes nav ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer #redes nav ul li a img{
+    width: 50px;
+    height: 50px;
+
+}
+
+/* ---------------Estilos para a página home------------------- */
+
+main{
+    background-color: #b08c64;
+    padding-top: 20px;
+}
+
+
+main h2{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 30pt;
+    margin:50px;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+
+}
+
+
+main p{
+    margin: 0px  200px;
+    text-align: justify;
+    line-height: 25px;
+    font-family: "Pathway Gothic One";
+    margin-bottom: 30px;
+}
+
+/* Aqui eu mexo na caixa  */
+main #imghome{
+    text-align: center;
+}
+
+/* Aqui eu mexo na imagem */
+main #imghome img{
+    width: 200px;
+    height: 200px;
+/* Vamos arredondar os cantos da imagem com comando border-radius. O valor, voce aplica em pixel ou percentual. */
+    border-radius: 50%;
+    margin: 10px;
+    /* Para deixar as imagens opacas ou transparentes, voce pode usar o comando opacity com o valor variando entre 0 e 1
+    onde 0 é totalmente transparente e 1 é totalmente visivel
+    */
+    opacity: 0.8;
+/* 
+Vamos aplicar um efeito de animação com o comando transition com meio segundo
+*/
+    -webkit-transition: ease 0.5s;
+    -o-transition: ease 0.5s;
+    transition: ease 0.5s;
+}
+main #imghome img:hover{
+    opacity: 1;
+    /* Ao passar o mouse sobre a imagem será aplicada a sombra com as seguintes configurações:
+    para o primeiro valor será 0, este representa x (horizontal); a segunda posição será 0px que representa o y(vertical)
+    a terceira posição é o efeito de enevoado que será 20 e por último a cor da sombra;
+    */
+    -webkit-box-shadow: 0px 0px 20px black;
+            box-shadow: 0px 0px 20px black;   
+
+}
+
+/* -------------- Menu --------------- */
+
+main #categoria{
+    width: 70%;
+    /* É sempre bom usar margens para enxergar onde eu estou trabalhando  */
+    /* border:4px solid red;  */
+    margin-top: -100px;
+    /* Além do margin-top com valor negativo para subir a caixa, posso usar o position tambem. */
+    /* position: relative; */
+    /* top: -1.5px; */
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    
+    
+}
+
+main #categoria img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+/* 
+Ao passar o mouse sobre a imagem será aplicada a sombra com as seguintes configurações:
+para o primeiro valor será 0, este representa x (horizontal); a segunda posição será 0px que representa o y(vertical)
+a terceira posição é o efeito de enevoado que será 20 e por último a cor da sombra;
+*/
+    -webkit-box-shadow: 3px 3px 3px black;
+            box-shadow: 3px 3px 3px black;  
+}
+
+main #categoria div{
+
+    text-align: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
+main #categoria div h3{
+    font-family: 'PT Serif', serif;
+    margin: 10px; 
+    color: #fff;  
+}
+
+main section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    
+}
+
+
+
+main #item1, #item2, #item3, #item4, #item5, #item6{
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 30%;
+    margin: 10px;
+
+}
+
+main #item1 img, #item2 img, #item3 img, #item4 img, #item5 img, #item6 img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 5px;
+    margin-top: 15px;
+   
+}
+
+main #item1 div p, #item2 div p, #item3 div p, #item4 div p, #item5 div p, #item6 div p{
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 28px;
+    font-size: 15px;
+}
+
+main #item1 div h3, #item2 div h3, #item3 div h3, #item4 div h3, #item5 div h3, #item6 div h3{
+    margin-top: 16px;
+    color: #fff;
+}
+
+main section div p{
+    margin: 0px;
+
+}
+
+main h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    margin: 20px auto;
+    border-bottom: 1px dotted brown;
+    color: #fff;
+}
+
+main #categoria a{
+    text-decoration: none;
+}
+
+/* --------------------------- LOCALIZAÇÃO ------------------------------------ */
+
+main #mapa iframe{
+    width: 60%;
+    height: 400px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 10px;
+}
+
+main h2{
+    margin-top: 20px;
+}
+
+/* ---------------------------- FORMATAÇÃO DO FORMULARIO --------------------- */
+
+main form{
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+    /* border: 1px solid silver; */
+    /* box-shadow: 0px 0px 10px gray; */
+
+}
+
+main form input[type=text],
+main form input[type=tel],
+main form input[type=email]{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* border-bottom: 1px silver; */
+    outline: none; /*retirar a borda ao clicar no campo */
+    border-radius: 10px;
+
+}
+
+main form select{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-bottom: 1 solid silver;
+    border-radius: 10px;
+    display: block;
+
+}
+
+main form textarea{
+    width: 95%;
+    height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    display: block;
+    outline-color: grey;
+    border-radius: 5px;
+}
+
+main form span{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+main form input[type=submit]{
+    display:block;
+    margin: 20px auto;
+    border:0px;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    -webkit-transition: ease 0.2s;
+    -o-transition: ease 0.2s;
+    transition: ease 0.2s;
+
+}
+main form input[type=submit]:hover{
+    cursor: pointer;
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* ================ ESTILIZAÇÃO QUEM SOMOS================ */
+
+main #video{
+    text-align: center;
+}
+
+main #video iframe{
+    width: 80%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+main p{
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* =================ÁREA DOS BRAKEPOINTS DE RESPONSIVIDADE======================= */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    header{
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+    }
+
+    #superior nav{
+        background-color: black ;
+        position: fixed;
+        left:-210px;
+        top: 0px;
+        z-index: 10000;
+        width: 200px;
+        height: 100vh;
+        text-align: left;
+        padding-top: 100px;
+        padding-left: 20px;
+        transition: ease 0.5s;
+    }
+
+    #superior nav ul li{
+        display:block;
+        margin-bottom: 25px;
+    }
+    .abrirmenu{
+        display: block;
+        width: 40px;
+    }
+    .fecharmenu{
+        display: block;
+        width: 40px;
+        height: 40px;
+        font-size: 20pt;
+        padding: 0px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        left: 160px;
+    }
+ }
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+ /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
