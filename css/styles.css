@@ -551,7 +551,7 @@ main p{
 /* =================ÁREA DOS BRAKEPOINTS DE RESPONSIVIDADE======================= */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 0) and (max-width: 800px){ 
+@media (min-width: 0px) and (max-width: 800px){ 
     header{
         background-position: 0px 0px;
         background-repeat: no-repeat;
